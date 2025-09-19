@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>LOGIN</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/samsungone');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+            font-family: 'SamsungOne','Roboto', sans-serif;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden;
+        }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.76);
+            padding: 30px 20px;
+            border-radius: 12px;
+            width: 380px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.774);
+        }
+        .login-content >h1{
+            font-family: 'Samsung Sharp Sans';
+            font-size: 28px;
+        }
+        .login-content >p {
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        input {
+            color: white;
+            width: 85%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.2);
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+        input:focus {
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .login-button {
+            width: 90%;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            color: black;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid darkcyan;
+        }
+        .login-button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.01);
+        }
+        .register-now a {
+            color: cyan;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .register-now a:hover {
+            color: white;
+        }
+        #welcome{
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="ribbondark.css">
+</head>
+<body>
+    <div class="ribbon">
+        <div>
+        <a href="homepage.html"><img src="logo1_inverted.png" alt="Samsung Logo" style="height: 50px;"></a>
+        </div>
+        <div class="centered-content">
+            <a href="products.html"><button class="rib-bt">Products</button></a>
+            <a href="accessories.html"><button class="rib-bt">Accessories</button></a>
+            <a href="membership.html"><button class="rib-bt">Membership</button></a>
+            <a href="support.html"><button class="rib-bt">Support</button></a>
+            <a href="ForBusiness.html"><button class="rib-bt">For Business</button></a>
+        </div>
+        <div class="right-content">
+            <a href="cart.html"></a>
+            <a href="search.html"><img src="logo2_inverted.png" alt="Search Icon"></a>
+            <img src="logo3_inverted.png" alt="Cart">
+            <a href="login.html"><img src="logo4_inverted.png" alt="Profile"></a>
+        </div>
+    </div>
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="bg3.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <div class="login-content" id="loginDiv">
+                <h1>Welcome Back</h1>
+                <p>Please log in to access your account.</p>
+                <form class="login-form" id="loginForm">
+                    <input type="email" placeholder="Email" id="email" required>
+                    <input type="password" placeholder="Password"  id="password" required>
+                    <button type="submit" class="login-button">Login</button>
+                </form> <br>
+                <p class="register-now">Don't have an account? 
+                    <a href="#">Register Now</a></p>
+            </div>
+            <div class="login-content" id="welcome">
+                <h1>Welcome Back</h1>
+                <h2 id="person"></h2><br>
+                <a href="homepage.html"><button id="goToSite" class="rib-bt">Go To Site</button></a>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>

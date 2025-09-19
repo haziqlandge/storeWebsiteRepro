@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SamsungOne';
+        }
+
+        h1, h2, h3{
+            font-family: 'Samsung Sharp Sans';
+        }
+        h1{
+            font-size: 26px;
+        }
+        h2{
+            font-size: 22px;
+        }
+        h3{
+            font-size: 20px;
+        }
+        .header-text{
+            position: relative;
+            top: 11vh;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header-text{        
+            justify-content: center;
+            background: linear-gradient(160deg,  #7b9da7, #2c6991);
+            height: 40vh;
+            box-shadow: 0 2px 2px #1c1c1c13;
+        }
+        .header-text > h1 {
+            color: white;
+            font-size: 50px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: solid 1px #f0f0f0e0;
+            cursor: pointer;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s ease;
+            padding: 15px;
+            height: 85vh;
+        }
+
+        .card:hover {
+            transform: scale(1.001);
+            box-shadow: 0 0 9px rgba(0, 0, 0, 0.089);
+        }
+
+        .image-container {
+            height: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container > img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .details {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            font-family: 'SamsungOne';
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .name {
+            margin-bottom: 5px;
+        }
+
+        .color-options,
+        .storage-options {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .storage-options button {
+            padding: 5px 12px;
+            margin-right: 5px;
+            border: 1px solid darkcyan;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .storage-options button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .product-description {
+            font-size: 10px;
+            padding: 5px 5px 10px 30px;
+        }
+        .product-description li {
+            margin-bottom: 5px;
+        }
+        .card p {
+            font-size: 9px; text-align: left;
+        }
+        .salePrice{
+            text-align: left;
+            font-size: 20px; 
+            font-family: 'SamsungOne';
+        }
+        #buy-now, #submit {
+            margin: auto;
+            width: 90%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 8px;
+            
+        }
+        #buy-now{
+            border: 2px solid #392566;
+            transition: all 0.3s ease;
+        }
+        #buy-now:hover{
+            background-color: black;
+            color: white;
+            border: 2px solid darkcyan;
+            transform: scale(1.01);box-shadow: 0 3px 12px #1c1c1c3d;
+            transform: translateY(-4px);
+        }
+        #submit {
+            display: block;
+            border: 1px solid grey;
+            transition: all 0.5s;
+        }
+        #submit:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: 1px solid rgb(0, 255, 255);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.315);
+            transform: translateY(-4px);
+        }
+    </style>
+    <link rel="stylesheet" href="ribbondark.css">
+</head>
+<body>
+    <div class="ribbon">
+        <div>
+        <a href="homepage.html"><img src="logo1_inverted.png" alt="Samsung Logo" style="height: 50px;"></a>
+        </div>
+        <div class="centered-content">
+            <a href="products.html"><button class="rib-bt">Products</button></a>
+            <a href="accessories.html"><button class="rib-bt">Accessories</button></a>
+            <a href="membership.html"><button class="rib-bt">Membership</button></a>
+            <a href="support.html"><button class="rib-bt">Support</button></a>
+            <a href="ForBusiness.html"><button class="rib-bt">For Business</button></a>
+        </div>
+        <div class="right-content">
+            <a href="cart.html"></a>
+            <a href="search.html"><img src="logo2_inverted.png" alt="Search Icon"></a>
+            <img src="logo3_inverted.png" alt="Cart">
+            <a href="login.html"><img src="logo4_inverted.png" alt="Profile"></a>
+        </div>
+    </div>
+    <div class="header-text">
+        <h1>Winter Sale Is Here!</h1>
+        <p>Use Coupon SAMSNOW10 For Flat 10% Off On All Products</p>
+    </div>
+    <div style="width: 100%; display: flex; padding: 20px 0px; position: relative; top: 10vh;">
+        <div style="flex: 1; padding: 15px 18px; background: linear-gradient(140deg, rgba(211, 211, 211, 0.322), rgba(128, 128, 128, 0.11), rgba(211, 211, 211, 0.082)); border-radius: 0px 30px 30px 0px;">
+            <h3 style="margin-bottom: 10px;">Filter By</h3>
+            <form id="Filters">
+                <form id="filterForm">
+                    <h4>Series</h4>
+                    <label>
+                        <input type="checkbox" name="series" value="1"> Galaxy Series
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="series" value="2"> Fold Series
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="series" value="3"> Flip Series
+                    </label>
+                </form><br>
+
+                <form id="storageForm">
+                    <h4>Storage</h4>
+                    <label for="storage512">
+                        <input type="checkbox" id="storage512" value="512"> 512GB
+                    </label><br>
+                    <label for="storage256">
+                        <input type="checkbox" id="storage256" value="256"> 256GB
+                    </label><br>
+                    <label for="storage128">
+                        <input type="checkbox" id="storage128" value="128"> 128GB
+                    </label>
+                </form><br>
+
+                <form id="ramForm">
+                    <h4>RAM</h4>
+                    <label for="ram16">
+                        <input type="checkbox" id="ram16" name="ram" value="16"> 16GB
+                    </label><br>
+                    <label for="ram12">
+                        <input type="checkbox" id="ram12" name="ram" value="12"> 12GB
+                    </label><br>
+                    <label for="ram8">
+                        <input type="checkbox" id="ram8" name="ram" value="8"> 8GB
+                    </label>
+                </form><br>
+
+                <form id="displayForm">
+                    <h4>Display</h4>
+                    <label for="samoled">
+                        <input type="checkbox" id="samoled" value="samoled"> Super AMOLED
+                    </label><br>
+                    <label for="amoled">
+                        <input type="checkbox" id="amoled" value="amoled"> AMOLED
+                    </label><br>
+                    <label for="oled">
+                        <input type="checkbox" id="oled" value="oled"> OLED
+                    </label><br>
+                    <label for="fhd">
+                        <input type="checkbox" id="fhd" value="fhd"> FHD
+                    </label>
+                </form><br>
+
+                <button type="submit" id="submit">Apply Filters</button>
+            </form>
+        </div>
+        
+        <div style="padding: 20px; flex: 5; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/81vxWpPpgNL._SX425_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy S24 Ultra</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Titanium Gray</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #1c1c1c;"></div>
+                        <div class="circle" style="background-color: #392566;"></div>
+                        <div class="circle" style="background-color: rgb(173, 173, 173);"></div>
+                    </div>
+                    <div class="storage-options">
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹159999.00</s> Save: ₹49900.00</p>
+                        <h3 class="salePrice">₹ 110099.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>State-of-the-art zoom capabilities for precision photography</li>
+                        <li>Enhanced gaming with powerful Snapdragon 8 Gen 3</li>
+                        <li>Anti-Glare coating for incredible views</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-plus-sm-s926bzkcins-thumb-539572960?$GNB_CARD_FULL_M_PNG_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy S24+</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Onyx Black</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #1c1c1c;"></div>
+                        <div class="circle" style="background-color: #5b3a2f;"></div>
+                        <div class="circle" style="background-color: violet;"></div>
+                    </div>
+                    <div class="storage-options">
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹99999.00</s> Save: ₹19999.00</p>
+                        <h3 class="salePrice">₹ 80000.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Setting the new standard of mobile, now with Galaxy AI</li>
+                        <li>Shrunken bezels & satin-finished aluminum</li>
+                        <li>Advanced durability with Gorilla Glass Victus 2</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/61+g6KrDXdL._SX679_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy S24</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Marble Gray</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #1c1c1c;"></div>
+                        <div class="circle" style="background-color: #5b3a2f;"></div>
+                        <div class="circle" style="background-color: #99ff45;"></div>
+                        <div class="circle" style="background-color: rgb(231, 234, 240);"></div>
+                        
+                    </div>
+                    <div class="storage-options">
+                        <button>128GB</button>
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹81999.00</s> Save: ₹17000.00</p>
+                        <h3 class="salePrice">₹ 64999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Brilliant AMOLED display with seamless scrolling</li>
+                        <li>Compact design with powerful performance</li>
+                        <li>Battery that adapts to your usage patterns</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/717gvwQRw7L._SX679_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy S24FE</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Lavender</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #d7e4f4;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                        <div class="circle" style="background-color: #d9eee5;"></div>
+                    </div>
+                    <div class="storage-options">
+                        <button>128GB</button>
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹79999.00</s> Save: ₹24999.00</p>
+                        <h3 class="salePrice">₹ 55000.00</h3>
+                    </div>
+                    <ul class="product-description">
+                    <li>6.4-inch Dynamic AMOLED display with vibrant colors</li>
+                    <li>Flagship-grade performance at an affordable price</li>
+                    <li>Pro-grade camera system with Nightography features</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/51XA5MwZInL._SX569_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Z Fold6</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Phantom Purple</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #1c1c1c;"></div>
+                        <div class="circle" style="background-color: rgb(36, 36, 66);"></div>
+                        <div class="circle" style="background-color: rgb(173, 173, 173);"></div>   
+                    </div>
+                    <div class="storage-options">
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹164999.00</s> Save: ₹34999.00</p>
+                        <h3 class="salePrice">₹ 130000.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Immersive folding display for productivity and creativity</li>
+                        <li>Multi-window support for multitasking like never before</li>
+                        <li>Advanced hinge technology for durable flexibility</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/51myCNRyf9L._SX425_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Z Flip6</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Lavender</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #d7e4f4;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                        <div class="circle" style="background-color: #99ff45;"></div>
+                        <div class="circle" style="background-color: #d9eee5;"></div>
+                    </div>
+                    <div class="storage-options">
+                        <button>256GB</button>
+                        <button>512GB</button>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹110999.00</s> Save: ₹31000.00</p>
+                        <h3 class='salePrice'>₹ 79999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Compact and stylish foldable design</li>
+                        <li>Reinforced hinge mechanism for increased durability</li>
+                        <li>Improved camera setup with 50MP primary sensor</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

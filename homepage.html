@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+    <title>Samsung</title>
+    <style>
+
+        .banner {
+            width: 100%;
+            height: 90vh;
+            position: relative;
+            cursor: pointer;
+        }
+        .banner video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            cursor: pointer;
+        }
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            color: black;
+            z-index: 1;
+            animation: slideIn 1s ease-in-out forwards ;
+            opacity: 0;
+        }
+        .banner-head {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .banner-desc {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .discount-text {
+            background-color: black;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .product-grid {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            justify-content: space-evenly;
+            height: 90vh;
+            background: linear-gradient(75deg, rgba(7, 4, 20, 0.822), rgba(20, 9, 48, 0.521), rgba(0, 0, 0, 0.863));
+            overflow: hidden;
+        }
+        .card {
+            position: relative;
+            background-color: #fdfdfd;
+            border: solid 1px #f0f0f0e0;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 10;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(143, 142, 142, 0.836);
+        }
+        .image-container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container>img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+        }
+        .details {
+            padding: 20px;
+            font-size: 26px;
+            text-align: center;
+            font-family: roboto;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, black, rgb(11, 3, 17));
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sale-price {
+            font-family: roboto;
+            font-size: 16px;
+            font-weight: medium;
+            color: rgb(226, 226, 226);
+        }
+        .left-card {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .right-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 600px;
+        }
+        .right-grid .card {
+            height: 300px;
+        }
+        .right-grid .image-container {
+            height: 200px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="ribbon.css">
+</head>
+<body>
+    <div class="ribbon">
+        <div>
+            <a href="homepage.html"><img src="icons/logo1.svg" alt="Samsung Logo" style="height: 50px;"></a>
+        </div>
+        <div class="centered-content">
+            <a href="products.html"><button class="rib-bt">Products</button></a>
+            <a href="accessories.html"><button class="rib-bt">Accessories</button></a>
+            <a href="membership.html"><button class="rib-bt">Membership</button></a>
+            <a href="support.html"><button class="rib-bt">Support</button></a>
+            <a href="ForBusiness.html"><button class="rib-bt">For Business</button></a>
+        </div>
+        <div class="right-content">
+            <a href="cart.html"></a>
+            <a href="search.html"><img src="icons/logo2.png"></a>
+            <img src="icons/logo3.svg">
+            <a href="login.html"><img src="icons/logo4.png"></a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <video autoplay muted>
+            <source
+                src="banner-vid.mp4"
+                type="video/mp4">
+        </video>
+        <div class="banner-text">
+            <h2 class="banner-head">Galaxy Z Fold6 | Z Flip6</h2>
+            <p class="banner-desc">Get complete device protection twice a year at just ₹ 999*<br>Plus, avail up to 24
+                mo. No Cost EMI</p>
+        </div>
+    </div>
+
+    <div class="discount-text">This Month's Special Discounts</div>
+
+    <div class="product-grid">
+        <video autoplay loop muted src="bg1.mp4"
+            style="position: absolute; top: 0; left: 0; width: 100%; object-fit: cover; z-index: -1;"></video>
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: linear-gradient(160deg, rgba(0, 0, 0, 0.281), rgba(14, 37, 107, 0.13), rgba(21, 9, 51, 0.089)); backdrop-filter: blur(3px);">
+        </div>
+        <div class="card left-card">
+            <div class="image-container">
+                <img src="https://m.media-amazon.com/images/I/81vxWpPpgNL._SX425_.jpg">
+            </div>
+            <div class="details">
+                <div class="name">Experience The All New Galaxy AI<br>With Galaxy S24 Ultra</div>
+                <div class="sale-price">UPTO ₹ 49900.00 OFF*</div>
+            </div>
+        </div>
+
+        <div class="right-grid">
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-plus-sm-s926bzkcins-thumb-539572960?$GNB_CARD_FULL_M_PNG_PNG$">
+                </div>
+                <div class="details">
+                    <div class="name">Galaxy S24+</div>
+                    <div class="sale-price">UPTO ₹ 19999.00 OFF*</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/717gvwQRw7L._SX679_.jpg">
+                </div>
+                <div class="details">
+                    <div class="name">Galaxy S24 FE</div>
+                    <div class="sale-price">UPTO ₹ 24999.00 OFF*</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/51XA5MwZInL._SX569_.jpg">
+                </div>
+                <div class="details">
+                    <div class="name">Galaxy Z Fold6</div>
+                    <div class="sale-price">UPTO ₹ 34999.00 OFF*</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/51myCNRyf9L._SX425_.jpg">
+                </div>
+                <div class="details">
+                    <div class="name">Galaxy Z Flip6</div>
+                    <div class="sale-price">UPTO ₹ 31000.00 OFF*</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

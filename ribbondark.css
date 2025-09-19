@@ -1,0 +1,55 @@
+@import url('https://fonts.cdnfonts.com/css/samsungone');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+body {
+    font-family: 'SamsungOne', 'Roboto', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 11.5vh;
+    z-index: 3;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(0, 0, 0), rgba(22, 22, 22, 0.979), rgb(2, 2, 2));
+    backdrop-filter: blur(20px);
+}
+.ribbon img {
+    height: 30px;
+    cursor: pointer;
+}
+.centered-content {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: center;
+}
+.right-content {
+    display: flex;
+    gap: 15px;
+}
+.rib-bt {
+    font-family: 'Samsung Sharp Sans';
+    color: azure;
+    background-color: black;
+    border: 1px rgb(5, 36, 36) solid;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+.rib-bt:hover {
+    border: 1px darkcyan solid;
+    background-color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+

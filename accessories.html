@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        p,
+        ul,
+        li,
+        button {
+            font-family: 'SamsungOne';
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Samsung Sharp Sans';
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        .header-text {
+            position: relative;
+            top: 11vh;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .header-text {
+            justify-content: center;
+            background: linear-gradient(160deg, #7b9da7, #2c6991);
+            height: 40vh;
+            box-shadow: 0 2px 2px #1c1c1c13;
+        }
+
+        .header-text>h1 {
+            color: white;
+            font-size: 50px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: solid 1px #f0f0f0e0;
+            cursor: pointer;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s ease;
+            padding: 15px;
+            height: 70vh;
+        }
+
+        .card:hover {
+            transform: scale(1.001);
+            box-shadow: 0 0 9px rgba(0, 0, 0, 0.089);
+        }
+
+        .image-container {
+            height: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container>img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .details {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            font-family: 'SamsungOne';
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .name {
+            margin-bottom: 5px;
+        }
+
+        .color-options,
+        .storage-options {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .storage-options button {
+            padding: 5px 12px;
+            margin-right: 5px;
+            border: 1px solid darkcyan;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .storage-options button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .product-description {
+            font-size: 10px;
+            padding: 5px 5px 10px 30px;
+        }
+
+        .product-description li {
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 9px;
+            text-align: left;
+        }
+
+        .salePrice {
+            text-align: left;
+            font-size: 20px;
+            font-family: 'SamsungOne';
+        }
+
+        #buy-now,
+        #submit {
+            margin: auto;
+            width: 90%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 8px;
+
+        }
+
+        #buy-now {
+            border: 2px solid #392566;
+            transition: all 0.3s ease;
+        }
+
+        #buy-now:hover {
+            background-color: black;
+            color: white;
+            border: 2px solid darkcyan;
+            transform: scale(1.01);
+            box-shadow: 0 3px 12px #1c1c1c3d;
+            transform: translateY(-4px);
+        }
+
+        #submit {
+            display: block;
+            border: 1px solid grey;
+            transition: all 0.5s;
+        }
+
+        #submit:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: 1px solid rgb(0, 255, 255);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.315);
+            transform: translateY(-4px);
+        }
+    </style>
+    <link rel="stylesheet" href="ribbondark.css">
+</head>
+
+<body>
+    <div class="ribbon">
+        <div>
+            <a href="homepage.html"><img src="logo1_inverted.png" alt="Samsung Logo" style="height: 50px;"></a>
+        </div>
+        <div class="centered-content">
+            <a href="products.html"><button class="rib-bt">Products</button></a>
+            <a href="accessories.html"><button class="rib-bt">Accessories</button></a>
+            <a href="membership.html"><button class="rib-bt">Membership</button></a>
+            <a href="support.html"><button class="rib-bt">Support</button></a>
+            <a href="ForBusiness.html"><button class="rib-bt">For Business</button></a>
+        </div>
+        <div class="right-content">
+            <a href="cart.html"></a>
+            <a href="search.html"><img src="logo2_inverted.png" alt="Search Icon"></a>
+            <img src="logo3_inverted.png" alt="Cart">
+            <a href="login.html"><img src="logo4_inverted.png" alt="Profile"></a>
+        </div>
+    </div>
+    <div class="header-text">
+        <h1>Winter Sale Is Here!</h1>
+        <p>Use Coupon Access25 For Flat 25% Off On All Accessories</p>
+    </div>
+    <!-- Filters and Products Section -->
+    <div style="width: 100%; display: flex; padding: 20px 0px; position: relative; top: 10vh;">
+        <!-- Filters Section -->
+        <div
+            style="flex: 1; padding: 15px 18px; background: linear-gradient(140deg, rgba(211, 211, 211, 0.322), rgba(128, 128, 128, 0.11), rgba(211, 211, 211, 0.082)); border-radius: 0px 30px 30px 0px;">
+            <h3 style="margin-bottom: 10px;">Filter By</h3>
+            <form id="Filters">
+                <form id="filterForm">
+                    <h4>Categories</h4>
+                    <label>
+                        <input type="checkbox" name="category" value="Galaxy Watches"> Galaxy Watches
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="category" value="Galaxy Buds"> Galaxy Buds
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="category" value="Mobile Covers"> Mobile Covers
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="category" value="Chargers (Wired/Wireless)"> Chargers
+                        (Wired/Wireless)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="category" value="Other Accessories"> Other Accessories
+                    </label>
+                </form><br>
+                <form id="batteryLifeForm">
+                    <h4>Battery Life</h4>
+                    <label>
+                        <input type="checkbox" name="battery" value="below-24hrs"> Below 24 Hours
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="battery" value="24-48hrs"> 24 - 48 Hours
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="battery" value="above-48hrs"> Above 48 Hours
+                    </label>
+                </form><br>
+                <form id="chargeTypeForm">
+                    <h4>Charging Type</h4>
+                    <label>
+                        <input type="checkbox" name="chargeType" value="Wired"> Wired
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="chargeType" value="wireless"> Wireless
+                    </label><br>
+
+                </form><br>
+                <form>
+                    <h4><strong>Charging Speed (in watts):</strong></h4>
+                    <input type="checkbox" id="speed15" name="chargingSpeed" value="15"> 
+                    <label for="speed15">15W</label> <br>
+                    <input type="checkbox" id="speed25" name="chargingSpeed" value="25"> 
+                    <label for="speed25">25W</label> <br>
+                    <input type="checkbox" id="speed40" name="chargingSpeed" value="40">
+                    <label for="speed40">40W</label><br>
+                </form><br>
+                <form id="discountFilterForm">
+                    <h4><strong>Filter by Discount:</strong></h4> 
+                    <input type="radio" id="discount10-20" name="discountRange" value="10-20">
+                    <label for="discount10-20">10-20%</label> <br>
+                    <input type="radio" id="discount20-30" name="discountRange" value="20-30">
+                    <label for="discount20-30">20-30%</label> <br>
+                    <input type="radio" id="discount30+" name="discountRange" value="30+">
+                    <label for="discount30+">30%+</label> <br>
+                </form> <br>
+                <button type="submit" id="submit">Apply Filters</button>
+            </form>
+        </div>
+
+        <!-- Products Section -->
+        <div
+            style="padding: 20px; flex: 5; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
+            <!-- Galaxy Watch 7 Ultra -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/81WgHy3pZ3L._SX679_.jpg">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Watch 7 Ultra</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Mystic White</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #F5F5F5;"></div>
+                        <div class="circle" style="background-color: #FFA07A;"></div>
+                        <div class="circle" style="background-color: #8B4513;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹69999.00</s> Save: ₹12000.00</p>
+                        <h3 class="salePrice">₹ 57999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Enhanced durability with Sapphire Crystal display</li>
+                        <li>Ultra-battery life for extended use</li>
+                        <li>Advanced health monitoring features</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <!-- Galaxy Buds 3 Pro -->
+            <div class="card">
+                <div class="image-container">
+                    <img
+                        src="https://images.samsung.com/is/image/samsung/p6pim/in/2407/gallery/in-galaxy-buds3-pro-r630-sm-r630nzaainu-542134810?$2160_1728_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Buds 3 Pro</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Graphite</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #F5F5F5;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹24999.00</s> Save: ₹5000.00</p>
+                        <h3 class="salePrice">₹ 19999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Industry-leading ANC for immersive audio</li>
+                        <li>Long-lasting battery with fast charging</li>
+                        <li>Water-resistant design for active lifestyles</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <!-- Galaxy Buds FE -->
+            <div class="card">
+                <div class="image-container">
+                    <img
+                        src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-r400nzwains/gallery/in-galaxy-buds-fe-sm-r400nzwains-538435647?$2160_1728_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Buds FE</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Mystic White</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #F5F5F5;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                        <div class="circle" style="background-color: #98FB98;"></div>
+                        <div class="circle" style="background-color: #FFA07A;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹12999.00</s> Save: ₹4000.00</p>
+                        <h3 class="salePrice">₹ 8999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Balanced audio with custom equalizer</li>
+                        <li>Compact design with universal fit</li>
+                        <li>Integrated voice assistant support</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <!-- Galaxy Watch 7 -->
+            <div class="card">
+                <div class="image-container">
+                    <img
+                        src="https://images.samsung.com/is/image/samsung/p6pim/in/2407/gallery/in-galaxy-watch7-l315-sm-l315fzgains-542367167?$2160_1728_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Watch 7</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Brown</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #808080;"></div>
+                        <div class="circle" style="background-color: #F5F5F5;"></div>
+                        <div class="circle" style="background-color: #FFA07A;"></div>
+                        <div class="circle" style="background-color: #8B4513;"></div>
+                        <div class="circle" style="background-color: #000000;"></div>
+                        <div class="circle" style="background-color: #434343;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹39999.00</s> Save: ₹8000.00</p>
+                        <h3 class="salePrice">₹ 31999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Classic design with customizable watch faces</li>
+                        <li>Comprehensive fitness tracking</li>
+                        <li>Seamless connectivity with Galaxy ecosystem</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img
+                        src="https://images.samsung.com/is/image/samsung/p6pim/in/2407/gallery/in-galaxy-z-fold6-of95p-ef-of95pcpegin-542013388?$2160_1728_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">Galaxy Z Fold6 S Pen Case</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Pink</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #808080;"></div>
+                        <div class="circle" style="background-color: #483D8B;"></div>
+                        <div class="circle" style="background-color: #FFC0CB;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹5999.00</s> Save: ₹599.00</p>
+                        <h3 class="salePrice">₹ 5400.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>Stylish and durable protective case</li>
+                        <li>Integrated S Pen slot for convenience</li>
+                        <li>Perfectly complements Galaxy Z Fold6</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <!-- 45W Super Fast Charger -->
+            <div class="card">
+                <div class="image-container">
+                    <img
+                        src="https://images.samsung.com/is/image/samsung/p6pim/in/ep-t4511xbegin/gallery/in-45w-power-adapter-ep-t4511-ep-t4511xbegin-543189017?$2160_1728_PNG$">
+                </div>
+                <div class="details">
+                    <h2 class="name">45W Super Fast Charger</h2>
+                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>Color:</strong> Graphite</p>
+                    <div class="color-options">
+                        <div class="circle" style="background-color: #434343;"></div>
+                    </div>
+                    <div class="price-section">
+                        <p>MRP (Inclusive of all taxes) <s>₹3999.00</s> Save: ₹1000.00</p>
+                        <h3 class="salePrice">₹ 2999.00</h3>
+                    </div>
+                    <ul class="product-description">
+                        <li>45W power delivery for ultra-fast charging</li>
+                        <li>Compatible with multiple devices</li>
+                        <li>Durable and compact design</li>
+                    </ul>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
